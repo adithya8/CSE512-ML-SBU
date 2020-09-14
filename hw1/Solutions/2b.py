@@ -2,7 +2,7 @@
 ###########################################
 #author-gh: @adithya8
 #sbu-id: 112683104
-#doc: cse-512-hw1-logistic_regression
+#desc: cse-512-hw1-logistic_regression
 ###########################################
 ###########################################
 #Imports
@@ -16,7 +16,6 @@ import matplotlib.pyplot as plt
 plt.style.use('tableau-colorblind10')
 ###########################################
 ###########################################
-
 
 def load_data(path:str="../mnist.mat"):
     '''
