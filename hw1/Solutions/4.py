@@ -140,7 +140,7 @@ def plot_regression_alpha(pred_dict:dict, y:np.ndarray, X:np.ndarray, file_path:
         axs[i//3, i%3].grid(axis="x")
         axs[i//3, i%3].tick_params(axis='both', which='major', labelsize=15)
 
-    P = 6
+    P = 3
     fig.suptitle(f"Dew vs Weeks; P={P}", fontsize=20)
 
     fig.savefig(f"{file_path}", bbox_inches="tight", pad_inches=0.5)
