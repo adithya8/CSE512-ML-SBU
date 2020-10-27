@@ -47,6 +47,7 @@ if __name__ == '__main__':
     print (word_prior_proba("the", count))
 
     print (condn_proba_nxt_word("the", "rabbit", next_word_count, count))
+    print (condn_proba_nxt_word("little", "thing", next_word_count, count))
 
     words = ["a", "the", "splendidly", "exclaimed"]
     for word in words:
