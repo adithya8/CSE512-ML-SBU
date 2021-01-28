@@ -1,0 +1,79 @@
+
+
+warning from FeatureExtractor: unable to import jsonrpclib or simplejson
+Unable to import topic extractor; topic extraction disabled
+[Loading /data/avirinchipur/CSE512-ML-SBU/project-unguided/dlatk/models/1to2grm_01_svc.pickle]
+Outcomes in loaded model: ['binary_label', 'fine_label']
+[number of groups: 1871]
+ [Aligning current X with training X: feature group: 0]
+  Features Aligned: 271
+  Groups Aligned: 1871
+
+= binary_label =
+----------------
+   this outcome has less groups. Shrunk groups to 893 total.
+  (feature group: 0)
+   [Test size: 893 ]
+  predict: applying standard scaler to X[0]: StandardScaler(copy=True, with_mean=True, with_std=True)
+  predict: combined X shape: (893, 271)
+  predict: classifier intercept: [-0.00060624]
+[Done. Evaluation:]
+ *confusion matrix: 
+[[181 250]
+ [174 288]]
+ *precision and recall: 
+             precision    recall  f1-score   support
+
+          0       0.51      0.42      0.46       431
+          1       0.54      0.62      0.58       462
+
+avg / total       0.52      0.53      0.52       893
+
+ *ACC: 0.5252 (mfclass_acc: 0.5174); mfclass: 1
+ *AUC: 0.5254
+ *f1: 0.5183 
+ *matt_ccoef: 0.0442 
+ *precision: 0.5226 
+ *recall: 0.5217 
+*Mean Squared Error:                 0.4748
+
+= fine_label =
+--------------
+  (feature group: 0)
+   [Test size: 1871 ]
+  predict: applying standard scaler to X[0]: StandardScaler(copy=True, with_mean=True, with_std=True)
+  predict: combined X shape: (1871, 271)
+  predict: classifier intercept: [-0.22509176 -0.18817822 -0.08481436 -0.19099048 -0.22463803]
+[Done. Evaluation:]
+ *confusion matrix: 
+[[  0   5  92   4   0]
+ [  2  14 290   6  18]
+ [ 12  50 869  27  20]
+ [  6  16 324   5  12]
+ [  0   7  87   2   3]]
+ *precision and recall: 
+             precision    recall  f1-score   support
+
+          0       0.00      0.00      0.00       101
+          1       0.15      0.04      0.07       330
+          2       0.52      0.89      0.66       978
+          3       0.11      0.01      0.02       363
+          4       0.06      0.03      0.04        99
+
+avg / total       0.33      0.48      0.36      1871
+
+ *ACC: 0.4762 (mfclass_acc: 0.5227); mfclass: 2
+Muti-AUCs:
+   0 : 0.4938
+   1 : 0.4761
+   2 : 0.5198
+   3 : 0.5026
+   4 : 0.4723
+ *AUC: 0.7166
+ *f1: 0.1577 
+ *matt_ccoef: -0.0093 
+ *precision: 0.1691 
+ *recall: 0.1950 
+*Mean Squared Error:                 1.0470
+
+[Prediction Complete]

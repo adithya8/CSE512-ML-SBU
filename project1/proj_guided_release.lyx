@@ -1,0 +1,979 @@
+#LyX file created by tex2lyx 2.3
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin C:/Users/Yifan/Dropbox/Courses/Fall2020-CSE512/homeworks/CSE512_hw_solns/project_guided/
+\textclass article
+\begin_preamble
+\usepackage{tabularx}
+\usepackage{fullpage}\usepackage{url}\usepackage{graphicx}\usepackage{amsthm}\usepackage{xparse}\usepackage{color}\usepackage{mathrsfs}\usepackage{epstopdf}
+\usepackage{fullpage}
+
+
+\usepackage{xifthen}
+
+
+\newcommand{\mypagebreak}{\begin{center}
+		\noindent\makebox[\linewidth]{\rule{7.5in}{1pt}}
+	\end{center}}
+
+\newcommand{\minimize}[1]{\underset{#1}{\text{minimize}}}
+\newcommand{\maximize}[1]{\underset{#1}{\text{maximize}}}
+
+\newcommand{\mini}[1]{\underset{#1}{\text{min}}}
+\newcommand{\argmin}[1]{\underset{#1}{\text{argmin}}}
+\newcommand{\st}{\text{subject to}}
+\newcommand{\rank}{\textbf{rank}}
+\newcommand{\epi}{\mathbf{epi}}
+
+\newcommand{\diag}{\textbf{diag}}
+\newcommand{\mb}{\mathbf}
+\newcommand{\R}{\mathbb R}
+\newcommand{\mle}{\mathbf{MLE}}
+\newcommand{\map}{\mathbf{MAP}}
+\newcommand{\bE}{\mathbb E}
+\newcommand{\mL}{\mathcal L}
+\newcommand{\mH}{\mathcal H}
+\newcommand{\mN}{\mathcal N}
+\newcommand{\mD}{\mathcal D}
+\newcommand{\mC}{\mathcal C}
+
+\newcommand{\mS}{\mathcal S}
+\newcommand{\tr}{\mathbf{tr}}
+\newcommand{\mrm}{\mathrm}
+\newcommand{\proj}{\mathbf{proj}}
+\newcommand{\conv}{\mathbf{conv}}
+\newcommand{\prox}{\mathbf{prox}}
+\newcommand{\sign}{\mathbf{sign}}
+\newcommand{\range}{\mathbf{range}}
+\newcommand{\var}{\mathbf{var}}
+\newcommand{\vnull}{\mathbf{null}}
+\newcommand{\pr}{\mathbf{Pr}}
+\newcommand{\find}{\mathbf{find}}
+\newcommand{\argmax}[1]{\underset{#1}{\mathrm{argmax}}}
+\newcommand{\subjto}{\mathrm{subject~to}}
+
+\newcommand{\bmat}{\left[\begin{matrix}}
+\newcommand{\emat}{\end{matrix}\right]}
+
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+
+\newcommand{\gray}[1]{\textcolor{lightgray}{#1}}
+
+
+\newcommand{\ifequals}[3]{\ifthenelse{\equal{#1}{#2}}{#3}{}}
+\newcommand{\case}[2]{#1 #2} 
+\newenvironment{switch}[1]{\renewcommand{\case}{\ifequals{#1}}}{}
+
+
+
+
+
+
+\end_preamble
+\options ruled,vlined
+\use_default_options false
+\begin_modules
+algorithm2e
+theorems-ams
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style siam
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\size larger
+
+\series bold
+CSE 512: Guided project: 
+\begin_inset space \hfill{}
+
+\end_inset
+
+Due Dec. 7 
+\series default
+
+\size default
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+mypagebreak
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Word embeddings
+\end_layout
+
+\begin_layout Standard
+Open the ipython notebook 
+\family typewriter
+word_embedding_intro_release.ipynb
+\family default
+. Include in your writeup
+\end_layout
+
+\begin_layout Itemize
+a frequency histogram, and a histogram of the co-occurances of the words in the dataset 
+\end_layout
+
+\begin_layout Itemize
+the list of the 10 most frequent words, and the 10 least frequent words 
+\end_layout
+
+\begin_layout Itemize
+the list of the 10 most cooccuring word pairs 
+\end_layout
+
+\begin_layout Itemize
+the 10 closest words to the city where you were born. (If you were born in a town which is not in the vocabulary, pick the closest city which *is* in the vocabulary. 
+\end_layout
+
+\begin_layout Itemize
+the 10 closest words to an object that is close to you right now. 
+\end_layout
+
+\begin_layout Itemize
+your 2-D PCA word embeddings, and some comments on any interesting geometric structure you may see 
+\end_layout
+
+\begin_layout Section
+Duality theory and SVMs
+\end_layout
+
+\begin_layout Itemize
+Remember the soft-margin SVM problem from forever ago? 
+\begin_inset Formula \begin{equation}
+\begin{array}{ll}
+\minimize{\theta,s}  & \displaystyle \tfrac{1}{2} \|\theta\|_2^2 + C \sum_{i=1}^m \max\{s_i,0\}\\
+\subjto & y_ix_i^T\theta  + s_i = 1,\;  i = 1,...,m
+\end{array}
+\label{eq:svmprimal1}
+\end{equation}
+\end_inset
+
+We're going to use this method to classify our parts of speech.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Subgradients and subdifferentials.
+\series default
+ The hinge loss function 
+\begin_inset Formula \[
+g(s) = \sum_{i=1}^m \max\{s_i,0\}
+\]
+\end_inset
+
+is unfortunately not differentiable whenever there exists one 
+\begin_inset Formula $s_i = 0$
+\end_inset
+
+. But, it is convex. So, we can still take descent steps with respect to the objective by looking for 
+\emph on
+subgradients
+\emph default
+. Specifically, for the scalar function 
+\begin_inset Formula \[
+g_i(s) = \max\{s_i,0\},
+\]
+\end_inset
+
+we describe the 
+\emph on
+subdifferential
+\emph default
+ of 
+\begin_inset Formula $g_i$
+\end_inset
+
+ at 
+\begin_inset Formula $s$
+\end_inset
+
+ as 
+\begin_inset Formula \[
+\partial g_i(s) = \conv\left\{\lim_{\epsilon\to 0^+} g'_i(s+\epsilon),\lim_{\epsilon\to 0^-} g'_i(s+\epsilon)\right\} = 
+\begin{cases}
+\{1\} & s_i > 0\\
+\{0\} & s_i < 0\\
+[0,1] & s_i = 0.
+\end{cases}
+\]
+\end_inset
+
+Since subdifferentials are linear (not obvious, but can be proved), we can summarize the subdifferential of the hinge function via 
+\begin_inset Formula \[
+\partial (C\cdot g(s)) = C\sum_{i=1}^m \partial g_i(s)
+\]
+\end_inset
+
+where we describe the transformation of sets as 
+\begin_inset Formula \[
+C\mS = \{Cx : x\in \mS\} \text{ and } \mS_1 + \mS_2 = \{x+y : x\in \mS_1, \; y \in \mS_2\}.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The subgradient method for minimizing 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ for some convex but not differentiable function 
+\begin_inset Formula $f$
+\end_inset
+
+ goes as 
+\begin_inset Formula \[
+x^{(t+1)} = x^{(t)} - \alpha^{(t)} g^{(t)}, \quad g^{(t)}\in \partial f(x^{(t)}).
+\]
+\end_inset
+
+Here, 
+\begin_inset Formula $g^{(t)}$
+\end_inset
+
+ is any element from 
+\begin_inset Formula $\partial f(x^{(t)})$
+\end_inset
+
+. When you have more than one choice, you can pick any element, but you should design a rule that is agnostic to your knowledge of where the true solution is. When 
+\begin_inset Formula $\alpha^{(t)}$
+\end_inset
+
+ is diminishing but not summable, e.g. 
+\begin_inset Formula \[
+\alpha^{(t+1)} < \alpha^{(t)}, \qquad \lim_{t\to +\infty} \sum_{i=1}^t \alpha^{(i)} = \infty
+\]
+\end_inset
+
+then the subgradient method is known to converge. In particular, picking 
+\begin_inset Formula $\alpha^{(t)} = 1/(Lt)$
+\end_inset
+
+, the method converges at a rate of 
+\begin_inset Formula $f(x^{(t)}) - f^* = O(1/\sqrt{(t)})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\begin_inset Argument item:1
+status collapsed
+
+
+\begin_layout Standard
+
+\series bold
+Q1
+\series default
+
+\end_layout
+
+\end_inset
+
+Show that for a 
+\emph on
+constant
+\emph default
+ step size, subgradient descent doesn't converge. Show this by arguing that minimizing the function 
+\begin_inset Formula \[
+\minimize{x} \quad \frac{1}{2}(x-c)^2 + \max\{x,0\} 
+\]
+\end_inset
+
+cannot reach its optimum for 
+\emph on
+all
+\emph default
+ choices of 
+\begin_inset Formula $c$
+\end_inset
+
+, using a step size that is agnostic to 
+\begin_inset Formula $c$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Specifically, do this by picking a step size reference point 
+\begin_inset Formula $0 < \bar s < 2/L$
+\end_inset
+
+, a starting point 
+\begin_inset Formula $x^{(0)} \neq x^*$
+\end_inset
+
+, and some value of 
+\begin_inset Formula $c$
+\end_inset
+
+, and show via simulation that 
+\begin_inset Formula $x^{(k)}$
+\end_inset
+
+ doesn't converge for a step size of 
+\begin_inset Formula $\bar s$
+\end_inset
+
+, 
+\begin_inset Formula $\bar s/10$
+\end_inset
+
+, and 
+\begin_inset Formula $\bar s/100$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Projections.
+\series default
+ Consider the projection problem 
+\begin_inset Formula \begin{equation}
+\begin{array}{ll}
+\minimize{x} & \frac{1}{2}\|x-\hat x\|_2^2\\
+\subjto & Ax = b
+\end{array}
+\label{eq:projection-primal}
+\end{equation}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\begin_inset Argument item:1
+status collapsed
+
+
+\begin_layout Standard
+
+\series bold
+Q2
+\series default
+
+\end_layout
+
+\end_inset
+
+Find the Lagrange dual of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:projection-primal"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and use the solution of the dual to show that, assuming that 
+\begin_inset Formula $AA^T$
+\end_inset
+
+ is invertible, then the solution to 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:projection-primal"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is 
+\begin_inset Formula \[
+x = A^T(AA^T)^{-1} (b-A\hat x) + \hat x.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Projected subgradient descent.
+\series default
+ For a problem of form 
+\begin_inset Formula \[
+\begin{array}{ll}
+\minimize{x} & f(x) \\
+\subjto & Ax = b
+\end{array}
+\]
+\end_inset
+
+the projected subgradient descent method runs the iterative scheme (from any initial point) 
+\begin_inset Formula \[
+x^{(t+1)} = \proj_{\mH}(x^{(t)} - \alpha g^{(t)})
+\]
+\end_inset
+
+where 
+\begin_inset Formula $g^{(t)}$
+\end_inset
+
+ is a subgradient of 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $x^{(t)}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mH = \{x : Ax = b\}$
+\end_inset
+
+ and the projection of 
+\begin_inset Formula $\hat x$
+\end_inset
+
+ on 
+\begin_inset Formula $\mH$
+\end_inset
+
+ is the solution to problem 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:projection-primal"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\begin_inset Argument item:1
+status collapsed
+
+
+\begin_layout Standard
+
+\series bold
+Q3
+\series default
+
+\end_layout
+
+\end_inset
+
+Use the pieces you have so far to propose an iteration scheme to solve 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:svmprimal1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ via projected subgradient descent. That is, given some 
+\begin_inset Formula $\theta^{(t)}$
+\end_inset
+
+ and 
+\begin_inset Formula $s^{(t)}$
+\end_inset
+
+, write out the equations used to compute 
+\begin_inset Formula $\theta^{(t+1)}$
+\end_inset
+
+ and 
+\begin_inset Formula $s^{(t+1)}$
+\end_inset
+
+, as explicitly as possible. (You will implement this code in the next section, so do it carefully here.)
+\end_layout
+
+\begin_layout Itemize
+An equivalent formulation of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:svmprimal1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is the following 
+\begin_inset Formula \begin{equation}
+\begin{array}{ll}
+\minimize{\theta,s}  & \displaystyle \tfrac{1}{2} \|\theta\|_2^2 + C \sum_{i=1}^m s_i\\
+\subjto & y_ix_i^T\theta  + s_i \geq 1,\;  i = 1,...,m\\
+& s_i \geq 0.
+\end{array}
+\label{eq:svmprimal2}
+\end{equation}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\begin_inset Argument item:1
+status collapsed
+
+
+\begin_layout Standard
+
+\series bold
+Q4
+\series default
+
+\end_layout
+
+\end_inset
+
+Write down the Lagrangian saddle point problem of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:svmprimal2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and minimize it with respect to the primal variables to derive the following dual problem 
+\begin_inset Formula \begin{equation}
+\begin{array}{ll}
+\maximize{u}  & \displaystyle -\tfrac{1}{2} \sum_{i=1}^m\sum_{j=1}^m y_iy_jx_i^Tx_ju_iu_j  +  \sum_{i=1}^m u_i\\
+\subjto & 0 \leq u \leq C.
+\end{array}
+\label{eq:svmdual}
+\end{equation}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\begin_inset Argument item:1
+status collapsed
+
+
+\begin_layout Standard
+
+\series bold
+Q5
+\series default
+
+\end_layout
+
+\end_inset
+
+Show that if 
+\begin_inset Formula $\theta^*$
+\end_inset
+
+, 
+\begin_inset Formula $s^*$
+\end_inset
+
+ optimize 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:svmprimal2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset Formula $u^*$
+\end_inset
+
+ optimizes 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:svmdual"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, then 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\begin_inset Formula $s_i^* > 1$
+\end_inset
+
+ implies the 
+\begin_inset Formula $i$
+\end_inset
+
+th training sample is not classified correctly, 
+\end_layout
+
+\begin_layout Enumerate
+
+\begin_inset Formula $y_ix_i^T\theta > 1$
+\end_inset
+
+ implies 
+\begin_inset Formula $u_i = 0$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Enumerate
+
+\begin_inset Formula $y_ix_i^T\theta < 1$
+\end_inset
+
+ implies 
+\begin_inset Formula $u_i = C$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Enumerate
+
+\begin_inset Formula $0 < u_i < C$
+\end_inset
+
+ implies 
+\begin_inset Formula $y_ix_i^T\theta = 1$
+\end_inset
+
+. 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\begin_inset Argument item:1
+status collapsed
+
+
+\begin_layout Standard
+
+\series bold
+Q6
+\series default
+
+\end_layout
+
+\end_inset
+
+Given 
+\begin_inset Formula $u^*$
+\end_inset
+
+, propose a predictor, e.g. some function where 
+\begin_inset Formula $f(u^*, x) = x^T\theta^* $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\begin_inset Argument item:1
+status collapsed
+
+
+\begin_layout Standard
+
+\series bold
+Q7
+\series default
+
+\end_layout
+
+\end_inset
+
+Propose how you would solve this using projected gradient descent, and how you would form a predictor. Remember that later, you will code this up, so include any detail here you would need to write this code.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Kernel support vector machines
+\series default
+ One way to think about kernel functions is to replace the linear prediction 
+\begin_inset Formula \[
+y = \sign(x_i^T\theta)
+\]
+\end_inset
+
+with a lifted version of 
+\begin_inset Formula $x_i$
+\end_inset
+
+, as 
+\begin_inset Formula $\phi(x_i)$
+\end_inset
+
+, e.g. 
+\begin_inset Formula \[
+y = \sign(\phi(x_i)^T\theta).
+\]
+\end_inset
+
+After finding the dual, this gives us an objective function of 
+\begin_inset Formula \[
+g(u) = -\tfrac{1}{2} \sum_{i=1}^m (y_i\phi(x_i)^Tu)^2  +  \sum_{i=1}^m u_i = -\tfrac{1}{2} u^TKu + u^T\mb 1
+\]
+\end_inset
+
+where 
+\begin_inset Formula $K_{ij} = y_iy_j\phi(x_i)^T\phi(x_j)$
+\end_inset
+
+ defines the Kernel matrix. The Kernel trick is simply, instead of holding onto the representations 
+\begin_inset Formula $\phi(x)$
+\end_inset
+
+, to only hold onto these inner product values. For example, the radial basis function (RBF) kernel computes 
+\begin_inset Formula \[
+K_{ij} = K(x_i,x_j) = \exp\left(-\frac{\|x_i-x_j\|_2}{2\sigma^2}\right), \qquad \hat K_{ij} = K_{ij}y_iy_j
+\]
+\end_inset
+
+which can be precomputed. 
+\begin_inset Formula \begin{equation}
+\begin{array}{ll}
+\maximize{u}  & \displaystyle -\tfrac{1}{2} \sum_{i=1}^m u^T\hat Ku^2  +  \sum_{i=1}^m u_i\\
+\subjto & 0 \leq u \leq C.
+\end{array}
+\label{eq:svmdual-kernel}
+\end{equation}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\begin_inset Argument item:1
+status collapsed
+
+
+\begin_layout Standard
+
+\series bold
+Q8
+\series default
+
+\end_layout
+
+\end_inset
+
+Propose how, given 
+\begin_inset Formula $u^*$
+\end_inset
+
+, you would offer a prediction on a new datasample, 
+\begin_inset Formula $x$
+\end_inset
+
+. Remember that you do not have access to 
+\begin_inset Formula $\phi$
+\end_inset
+
+, but you do have access to the kernel function 
+\begin_inset Formula $\mathcal K$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\begin_inset Argument item:1
+status collapsed
+
+
+\begin_layout Standard
+
+\series bold
+Q9
+\series default
+
+\end_layout
+
+\end_inset
+
+Propose how you would solve this using projected gradient descent. Remember that later, you will code this up, so include any detail here you would need to write this code.
+\end_layout
+
+\begin_layout Section
+Multiclass classification
+\end_layout
+
+\begin_layout Standard
+Now open 
+\family typewriter
+svm_POS_release.ipynb
+\family default
+ and go through the notebook. Report in your writeup 
+\end_layout
+
+\begin_layout Itemize
+loss, train and test misclassification plots for noun-vs-all, for primal projected subgradient method 
+\end_layout
+
+\begin_layout Itemize
+comparison of loss functions for primal and dual linear SVM 
+\end_layout
+
+\begin_layout Itemize
+evidence of cross validation to determine best value of 
+\begin_inset Formula $C$
+\end_inset
+
+ in the primal linear SVM and 
+\begin_inset Formula $C$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ in Kernel SVM 
+\end_layout
+
+\begin_layout Itemize
+confusion matrix of final answer on train, validation, and test set. 
+\end_layout
+
+\begin_layout Section
+Discussion
+\end_layout
+
+\begin_layout Standard
+Conclude your report with some observations and thoughts on 
+\end_layout
+
+\begin_layout Itemize
+the computational complexity of each method 
+\end_layout
+
+\begin_layout Itemize
+the effectiveness of each method 
+\end_layout
+
+\begin_layout Itemize
+any tricks used to deal with imbalanced data, or with overfitting. 
+\end_layout
+
+\begin_layout Standard
+Would you recommend using word embedding for POS classification, using the method we proposed here? Using a different method? Not at all? 
+\end_layout
+
+\end_body
+\end_document
